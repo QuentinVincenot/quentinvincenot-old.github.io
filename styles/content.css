@@ -1,0 +1,22 @@
+/*--------------------------------------------------------------------------------
+----- CONTENT : Main content of each sections
+--------------------------------------------------------------------------------*/
+
+/* Cancel horizontal positionning of navigation menu item links */
+.content { clear: both; }
+
+.content {
+    width: 1400px;
+    height: 50px; /* Temporary... */
+    text-align: center; /* Temporary... */
+    margin: auto;
+    background-color: red;
+    display: none;
+}
+
+/*--------------------------------------------------------------------------------
+----- RESPONSIVE : Responsive adjustments when screen is less wide then the banner size
+--------------------------------------------------------------------------------*/
+@media screen and (max-width: 1400px) {
+
+}

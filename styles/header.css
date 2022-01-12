@@ -1,12 +1,9 @@
-/* Default outer background should be white */
-html {background-color: white;}
-
 /*--------------------------------------------------------------------------------
 ----- HEADER : Original header configurations and dimensions for large screens
 --------------------------------------------------------------------------------*/
 
 /* The header should be correctly dimensionated regarding the banner, placed as a background image */
-#header { width: 1400px; height: 350px; margin: auto; background: url("../../images/multicolor-banner.jpg"); }
+#header { width: 1400px; height: 350px; margin: auto; background: url("../images/multicolor-banner.jpg"); }
 
 /* The header photo space is 250 pixels high */
 #header-photo { height: 250px; }
@@ -26,6 +23,8 @@ html {background-color: white;}
     position: relative; top: -10px; z-index: 10;
     /* Configure the text size, font and color */
     font-family: 'The Nautigal', cursive; font-size: 90px; color: white;
+    /* Make the name unselectable */
+    user-select: none;
 }
 
 /*--------------------------------------------------------------------------------
@@ -38,5 +37,5 @@ html {background-color: white;}
     #header-photo { height: 250px; text-align: center; }
     #header-photo > img { position: relative; top: 25px; left: 0px; }
     /* The name in the header should be centered, horizontally and vertically */
-    #header-name { width: 100%; height: 100px; }
+    #header-name { width: 100%; height: 100px; text-align: center; }
 }
