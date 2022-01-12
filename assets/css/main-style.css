@@ -1,0 +1,42 @@
+/* Default outer background should be white */
+html {background-color: white;}
+
+/*--------------------------------------------------------------------------------
+----- HEADER : Original header configurations and dimensions for large screens
+--------------------------------------------------------------------------------*/
+
+/* The header should be correctly dimensionated regarding the banner, placed as a background image */
+#header { width: 1400px; height: 350px; margin: auto; background: url("../../images/multicolor-banner.jpg"); }
+
+/* The header photo space is 250 pixels high */
+#header-photo { height: 250px; }
+
+#header-photo > img {
+    /* Original dimensions of the photo, with rounded cut corners */
+    width: 200px; border-radius: 50%;
+    /* Reposition the image to be center in the higher part of the header */
+    position: relative; top: 25px;
+    left: 600px; /* 700 half-banner - 100 half-image */
+}
+
+#header-name {
+    /* Dimensionate and center the header for the name */
+    width: 1400px; height: 100px; line-height: 100px; text-align: center;
+    /* Center the name between the photo and the bottom of the header */
+    position: relative; top: -10px; z-index: 10;
+    /* Configure the text size, font and color */
+    font-family: 'The Nautigal', cursive; font-size: 90px; color: white;
+}
+
+/*--------------------------------------------------------------------------------
+----- RESPONSIVE : Responsive adjustments when screen is less wide then the banner size
+--------------------------------------------------------------------------------*/
+@media screen and (max-width: 1400px) {
+    /* The header should take all the screen width */
+    #header { width: 100%; }
+    /* The photo in the header should be centered, horizontally and vertically */
+    #header-photo { height: 250px; text-align: center; }
+    #header-photo > img { position: relative; top: 25px; left: 0px; }
+    /* The name in the header should be centered, horizontally and vertically */
+    #header-name { width: 100%; height: 100px; }
+}
