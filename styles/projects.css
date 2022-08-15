@@ -1,0 +1,25 @@
+/*--------------------------------------------------------------------------------
+----- PROJECTS : Main content for the projects section
+--------------------------------------------------------------------------------*/
+
+/* Cancel horizontal positionning of navigation menu item links */
+.content { clear: both; }
+
+.content {
+    /* Configure the global projects section size */
+    width: 1400px; height: 640px; margin: auto; padding-top: 10px;
+    /* Configure the text for the projects section */
+    text-align: center; font-family: 'Dongle', sans-serif; font-size: 30px;
+    /* Use a generic image as background */
+    background: url("../images/space-background.jpg");
+}
+
+/* Configure every project area with general and shared settings */
+.project-area {
+    width: 400px; height: 200px; margin-left: 50px; margin-top: 25px; border-radius: 25px;
+    border: solid greenyellow 1px; background-color: rgba(172, 255, 47, 0.664); opacity: 0.7;
+    float: left; transition: transform 250ms ease-out;
+}
+
+/* Configure every project area behaviour when it is hovered with the mouse */
+.project-area:hover { opacity: 0.8; transform: scale(1.05); }
