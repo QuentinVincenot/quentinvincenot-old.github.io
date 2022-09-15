@@ -17,7 +17,7 @@
 /* Configure every project area with general and shared settings */
 .project-area {
     width: 400px; height: 200px; margin-left: 50px; margin-bottom: 15px; border-radius: 25px;
-    border: solid greenyellow 1px; background-color: rgba(172, 255, 47, 0.664); opacity: 0.7;
+    border: solid rgba(173, 216, 230, 0.8) 1px; background-color: rgba(173, 216, 230, 0.8); opacity: 0.7;
     float: left; transition: transform 250ms ease-out;
 }
 
