@@ -7,7 +7,7 @@
 
 .content {
     /* Configure the global projects section size */
-    width: 1400px; height: 640px; margin: auto; padding-top: 10px;
+    width: 1400px; height: 640px; margin: auto; padding-top: 15px; padding-bottom: 15px;
     /* Configure the text for the projects section */
     text-align: center; font-family: 'Dongle', sans-serif; font-size: 30px;
     /* Use a generic image as background */
@@ -16,21 +16,47 @@
 
 /* Configure every project area with general and shared settings */
 .project-area {
-    width: 400px; height: 200px; margin-left: 50px; margin-top: 25px; border-radius: 25px;
+    width: 400px; height: 200px; margin-left: 50px; margin-bottom: 15px; border-radius: 25px;
     border: solid greenyellow 1px; background-color: rgba(172, 255, 47, 0.664); opacity: 0.7;
     float: left; transition: transform 250ms ease-out;
 }
 
 /* Configure every project area behaviour when it is hovered with the mouse */
-.project-area:hover { opacity: 0.8; transform: scale(1.05); }
+.project-area:hover { opacity: 0.8; transform: scale(1.02); }
 
+/* Configure every project area to be a link with the appropriate style */
 .project-area a {
-    display: block; width: 400px; height: 200px; border-radius: 25px; text-decoration: none;
+    display: block; width: 400px; height: 200px; border-radius: 25px;
+    color: black; text-decoration: none;
 }
 
+/* Configure every project icon to take around the third of the project area */
 .project-icon-area { width: 150px; }
+/* Reposition the images corresponding to each project */
 .project-icon-area > img { position: relative; top: 25px; width: 75px; height: 75px; margin: auto; }
+/* Configure every project title to take around two thirds of the project area */
 .project-title-area { width: 250px; line-height: 130px; font-size: 40px; }
 .project-description-area { clear: both; height: 55px; padding-top: 15px; font-size: 25px; line-height: 0.8; }
 
 .project-icon-area, .project-title-area { height: 130px; float: left; }
+
+/*--------------------------------------------------------------------------------
+----- RESPONSIVE : Responsive adjustments when screen is less wide then the banner size
+--------------------------------------------------------------------------------*/
+@media screen and (max-width: 1400px) {
+    /* The project section should take the whole width on the reduced page */
+    .content { width: 100%; height: 200px; margin: auto; font-size: 25px; }
+    /* Reconfigure the generic project area box dimension to keep a lateral margin */
+    .project-area { width: 95%; height: 200px; margin: auto; margin-bottom: 15px; float: none; }
+
+    /* The project area link should take the whole width of its project area on the reduced page */
+    .project-area a { width: 100%; }
+
+    /* The project icon area should take around the third of the project area on the reduced page */
+    .project-icon-area { width: 30%; }
+    /* Horizontally reposition the images corresponding to each project */
+    .project-icon-area > img { position: relative; left: 20px; }
+    /* The project title should take around two thirds of the project area on the reduced page */
+    .project-title-area { width: 70%; font-size: 40px; }
+    .project-description-area { clear: both; font-size: 25px; }   
+}
