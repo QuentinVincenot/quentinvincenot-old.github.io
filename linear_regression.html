@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Quentin Vincenot</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<!-- Stylesheets for the header, the navigation menu, and content sections -->
+		<link rel="stylesheet" href="styles/header.css"/>
+		<link rel="stylesheet" href="styles/navigation.css"/>
+		<link rel="stylesheet" href="styles/linear_regression.css"/>
+		<!-- Specific fonts for name and navigation menu items texts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=The+Nautigal&family=Indie+Flower&family=Dongle:wght@300&display=swap" rel="stylesheet">
+		<!-- Google Material icons -->
+		<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		
+	</head>
+	<body>
+        <div id="header">
+			<div id="header-photo"><img src="images/photo-quentin.png" alt="My profile photo"/></div>
+			<div id="header-name">Quentin Vincenot</div>
+        </div>
+		<div id="navigation">
+			<nav id="navigation-menu">
+				<div><a href="index.html"><i class="material-icons-outlined md-36">home</i> Home</a></div>
+				<div><a href="education.html"><i class="material-icons-outlined md-36">school</i> Education</a></div>
+				<div><a href="projects.html"><i class="material-icons-outlined md-36">dashboard</i> Projects</a></div>
+			</nav>
+		</div>
+		<div class="content">
+			<!-- Linear Regression<br/><br/> Content -->
+			
+			<div id="content-text">
+				<span id="project-title">Linear Regression</span>
+
+				<p>Linear Regression is very easy and common tool to perform Data Analysis and predictions on a set of data.<br/>
+				This page showcases a simple example built from scratch, consisting of deducing the weight of a person,
+				given its height.<br/></p>
+
+				<p>A virtual dataset of people measurements has been created and will be used throughout the rest of the page as our working tool.<br/>
+				You can have an overview of the datapoints in the scatterplot below, describing the two populations (women and men).<br/></p>
+
+				<div id="container-scatterplot">
+					<canvas id="women-men-scatterplot"></canvas>
+				</div>
+
+				<!--<div id="container-linechart">
+					<canvas id="lineChart"></canvas>
+				</div>
+
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+				Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+				<div id="container-barchart">
+					<canvas id="barChart"></canvas>
+				</div>
+	
+
+				
+	
+				Hello !<br/>
+	
+				<div id="container-radarchart">
+					<canvas id="radarChart"></canvas>
+				</div>-->
+
+			</div>
+
+		</div>
+        <div class="footer">
+			<!-- Footer -->
+        </div>
+		<script type="text/javascript" src="linear_regression.js"></script>
+	</body>
+</html>

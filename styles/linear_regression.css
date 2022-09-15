@@ -1,0 +1,62 @@
+/*--------------------------------------------------------------------------------
+----- CONTENT : Generic content for every empty section
+--------------------------------------------------------------------------------*/
+
+/* Cancel horizontal positionning of navigation menu item links */
+.content { clear: both; }
+
+.content {
+    width: 1400px; margin: auto; padding-top: 15px; padding-bottom: 15px;
+    background: url("../images/space-background.jpg");
+}
+
+#content-text {
+    width: 1200px; margin: auto; padding-top: 15px; padding-bottom: 15px;
+    font-size: 20px; text-align: center; border-radius: 30px;
+    background-color: rgba(80, 160, 151, 0.8);
+}
+
+#project-title {
+    font-size: 40px;
+}
+
+#container-scatterplot {
+    background-color: rgba(39, 245, 221, 0.7);
+    width: 600px; height: 300px; margin: 15px auto;
+    border-radius: 10px;
+}
+
+/*.content {
+    width: 1400px; height: 1700px; margin: auto;
+    padding-top: 10px; padding-bottom: 10px;
+    text-align: center; font-family: 'Dongle', sans-serif; font-size: 30px;
+    background: url("../images/space-background.jpg");
+    background-color: red;
+}
+
+/*
+
+#container-linechart {
+    background-color: rgba(39, 245, 221, 0.7); rgba(80, 160, 151, 0.8);
+    width: 400px; height: 200px; margin: auto;
+    border-radius: 10px;
+}
+
+#container-barchart, #container-scatterplot {
+    background-color: rgba(39, 245, 221, 0.7);
+    width: 400px; height: 200px; margin: auto;
+    border-radius: 10px;
+}
+
+#container-radarchart {
+    background-color: rgba(39, 245, 221, 0.7);
+    width: 400px; height: 400px; margin: auto;
+    border-radius: 10px;
+}*/
+
+/*--------------------------------------------------------------------------------
+----- RESPONSIVE : Responsive adjustments when screen is less wide then the banner size
+--------------------------------------------------------------------------------*/
+@media screen and (max-width: 1400px) {
+    .content { width: 100%; height: 300px; margin: auto; }
+}

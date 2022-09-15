@@ -6,7 +6,7 @@ html {background-color: white;}
 --------------------------------------------------------------------------------*/
 
 /* The navigation section is as wide as the rest of the page */
-#navigation { width: 1400px; height: 40px; margin: auto; }
+#navigation { width: 1400px; height: 50px; margin: auto; }
 
 /* Specify dedicated sizes, fonts and colors for the menu items */
 #navigation-menu > div {
