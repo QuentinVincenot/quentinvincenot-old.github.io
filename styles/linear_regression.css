@@ -13,7 +13,8 @@
 #content-text {
     width: 1200px; margin: auto; padding-top: 15px; padding-bottom: 15px;
     font-size: 20px; text-align: center; border-radius: 30px;
-    background-color: rgba(80, 160, 151, 0.8);
+    /*background-color: rgba(80, 160, 151, 0.8);*/
+    background-color: rgba(173, 216, 230, 0.8);
 }
 
 #project-title {
@@ -21,9 +22,13 @@
 }
 
 #container-scatterplot {
-    background-color: rgba(39, 245, 221, 0.7);
+    /*background-color: rgba(39, 245, 221, 1.0);*/
+    /*background-color: rgba(39, 245, 221, 1.0);*/
+    /*background-color: rgba(173, 216, 230, 1.0);*/
+    background-color: rgba(135, 206, 250, 0.7);
     width: 600px; height: 300px; margin: 15px auto;
     border-radius: 10px;
+    box-shadow: 4px 4px 2px 1px rgba(25, 25, 112, 0.8);
 }
 
 /*.content {
