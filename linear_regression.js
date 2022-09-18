@@ -1,49 +1,135 @@
-//----------------------------------------
-//--- Scatterplot
-//----------------------------------------
+//--------------------------------------------------------------------------------
+//--- Input datasets
+//--------------------------------------------------------------------------------
 
-var myChart3 = new Chart(document.getElementById('women-men-scatterplot').getContext('2d'), {
+var women_datapoints = [
+    {x:119, y:54}, {x:123, y:52}, {x:126, y:57}, {x:131, y:57}, {x:134, y:55},
+    {x:137, y:56}, {x:139, y:61}, {x:142, y:61}, {x:145, y:66}, {x:148, y:67},
+    {x:153, y:63}, {x:156, y:66}, {x:160, y:66}, {x:164, y:72}, {x:165, y:70}
+];
+
+var men_datapoints = [
+    {x:144, y:64}, {x:149, y:65}, {x:151, y:68}, {x:154, y:67}, {x:158, y:65},
+    {x:160, y:70}, {x:162, y:67}, {x:166, y:68}, {x:167, y:75}, {x:171, y:72},
+    {x:176, y:76}, {x:182, y:80}, {x:187, y:82}, {x:191, y:85}, {x:195, y:79}
+];
+
+var real_labels = [
+    {x:119, y:52}, {x:123, y:54}, {x:126, y:55}, {x:131, y:57}, {x:134, y:58},
+    {x:137, y:59}, {x:139, y:60}, {x:142, y:61}, {x:144, y:62}, {x:145, y:63},
+    {x:148, y:64}, {x:149, y:65}, {x:151, y:65}, {x:153, y:66}, {x:154, y:66},
+    {x:156, y:67}, {x:158, y:68}, {x:160, y:69}, {x:162, y:70}, {x:164, y:71},
+    {x:165, y:71}, {x:166, y:71}, {x:167, y:72}, {x:171, y:73}, {x:176, y:75},
+    {x:182, y:78}, {x:187, y:80}, {x:191, y:82}, {x:195, y:83}
+]
+
+
+//--------------------------------------------------------------------------------
+//--- Linear model
+//--------------------------------------------------------------------------------
+
+function prepare_training_data(input_real_data) {
+    let features = [], targets = [];
+    for(var i=0; i<input_real_data.length; i++) {
+        features.push(input_real_data[i].x) ;
+        targets.push(input_real_data[i].y);
+    }
+    return {'features': features, 'targets': targets}
+}
+
+class LinearRegression {
+    constructor() {
+        this.coefficient = 0; this.bias = 0;
+        console.log("LinearRegression model created !");
+    }
+
+    fit(input_features, expected_targets) {
+        console.log("Starting to fit input features !");
+
+        let predictions = [];
+        for(let i=0; i<input_features.length; i++) {
+            predictions.push(input_features[i] * this.coefficient + this.bias);
+        }
+
+        let current_loss_value = 0.0;
+        for(let i=0; i<expected_targets.length; i++) {
+            console.log('Target : ', expected_targets[i]);
+            console.log('Prediction :', predictions[i]);
+            let current_error = Math.pow(expected_targets[i] - predictions[i], 2);
+            console.log('Error :', current_error);
+
+            current_loss_value += current_error;
+            console.log(current_loss_value);
+        }
+        console.log(current_loss_value);
+    }
+}
+
+var linear_regression_model = new LinearRegression();
+
+var prepared_data = prepare_training_data(real_labels);
+var input_features = prepared_data['features'];
+var expected_targets = prepared_data['targets'];
+
+linear_regression_model.fit(input_features, expected_targets);
+
+
+//--------------------------------------------------------------------------------
+//--- Scatterplot
+//--------------------------------------------------------------------------------
+
+var initial_womenmen_scatterplot = new Chart(document.getElementById('women-men-scatterplot').getContext('2d'), {
     type: 'scatter',
     data: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [{
-            label: 'Women',
-            data: [
-                {x:119, y:54}, {x:123, y:52}, {x:126, y:57},
-                {x:134, y:55}, {x:137, y:56}, {x:139, y:61},
-                {x:145, y:66}, {x:148, y:67}, {x:153, y:63},
-                {x:156, y:66}, {x:160, y:66}, {x:164, y:72}
-            ],
-            pointRadius: 5,
-            backgroundColor: 'rgba(50, 205, 50, 0.7)'
+            label: 'Women', data: women_datapoints,
+            pointRadius: 5, backgroundColor: 'rgba(50, 205, 50, 0.7)'
         }, {
-            label: 'Men',
-            data: [
-                {x:130, y:55}, {x:132, y:60}, {x:140, y:68},
-                {x:151, y:68}, {x:154, y:67}, {x:160, y:70},
-                {x:167, y:75}, {x:178, y:70}, {x:176, y:76},
-                {x:183, y:78}, {x:182, y:80}, {x:187, y:82},
-                {x:195, y:79}, {x:191, y:85}, {x:198, y:91}
-            ],
-            pointRadius: 5,
-            backgroundColor: 'rgba(0, 150, 255, 0.7)'
+            label: 'Men', data: men_datapoints,
+            pointRadius: 5, backgroundColor: 'rgba(0, 150, 255, 0.7)'
         }]
     },
     options: {
         responsive: true,
         scales: {
-            x: {
-                title: {display: true, text:'Height (cm)'},
-                min: 110, max: 200
-            },
-            y: {
-                title: {display: true, text:'Weight (kg)'},
-                min: 50, max: 95
-            }
+            x: { title: {display: true, text:'Height (cm)'}, min: 110, max: 200 },
+            y: { title: {display: true, text:'Weight (kg)'}, min: 50, max: 95 }
         },
         plugins: {
-            legend: {position: 'top'},
-            title: {display: true, text: 'People measurements'}
+            legend: {position: 'top'}, title: {display: true, text: 'People measurements'}
+        }
+    }
+});
+
+
+//--------------------------------------------------------------------------------
+//--- Scatterplot with guessed relationship
+//--------------------------------------------------------------------------------
+
+var womenmen_scatterplot_with_guess = new Chart(document.getElementById('women-men-scatterplot-guess').getContext('2d'), {
+    type: 'scatter',
+    data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+            label: 'Women', data: women_datapoints,
+            pointRadius: 5, backgroundColor: 'rgba(50, 205, 50, 0.7)'
+        }, {
+            label: 'Men', data: men_datapoints,
+            pointRadius: 5, backgroundColor: 'rgba(0, 150, 255, 0.7)'
+        }, {
+            type: 'line', label: 'Guessed relationship', data: [{x:115, y:51}, {x:197, y:84}],
+            borderWith: 1, borderDash: [7, 3], borderColor: 'rgba(255, 99, 132, 0.5)'
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            x: { title: {display: true, text:'Height (cm)'}, min: 110, max: 200 },
+            y: { title: {display: true, text:'Weight (kg)'}, min: 50, max: 95 }
+        },
+        plugins: {
+            legend: {position: 'top'}, title: {display: true, text: 'People measurements'}
         }
     }
 });

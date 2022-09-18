@@ -22,10 +22,7 @@
     font-size: 40px;
 }
 
-#container-scatterplot {
-    /*background-color: rgba(39, 245, 221, 1.0);*/
-    /*background-color: rgba(39, 245, 221, 1.0);*/
-    /*background-color: rgba(173, 216, 230, 1.0);*/
+.container-scatterplot {
     background-color: rgba(135, 206, 250, 0.7);
     width: 600px; height: 300px; margin: 15px auto;
     border-radius: 10px;
