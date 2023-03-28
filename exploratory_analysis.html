@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Quentin Vincenot</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<!-- Stylesheets for the header, the navigation menu, and content sections -->
+		<link rel="stylesheet" href="styles/header.css"/>
+		<link rel="stylesheet" href="styles/navigation.css"/>
+		<link rel="stylesheet" href="styles/exploratory_analysis.css"/>
+		<!-- Specific fonts for name and navigation menu items texts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=The+Nautigal&family=Indie+Flower&family=Dongle:wght@300&display=swap" rel="stylesheet">
+		<!-- Google Material icons -->
+		<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+		<script type="text/javascript" src="https://unpkg.com/@sgratzl/chartjs-chart-boxplot@3.6.0/build/index.umd.min.js"></script>
+		
+	</head>
+	<body>
+        <div id="header">
+			<div id="header-photo"><img src="images/photo-quentin.png" alt="My profile photo"/></div>
+			<div id="header-name">Quentin Vincenot</div>
+        </div>
+		<div id="navigation">
+			<nav id="navigation-menu">
+				<div><a href="index.html"><i class="material-icons-outlined md-36">home</i> Home</a></div>
+				<div><a href="education.html"><i class="material-icons-outlined md-36">school</i> Education</a></div>
+				<div><a href="projects.html"><i class="material-icons-outlined md-36">dashboard</i> Projects</a></div>
+			</nav>
+		</div>
+		<div class="content">
+			<!-- Content -->
+			<div id="content-text">
+				<span id="project-title">Exploratory Analysis</span>
+
+				<p>
+					This little project illustrates a few steps of data analysis on the famous Iris dataset.
+					The <b>Iris flower data set</b> (also called Fisher's Iris data set, named after the British statistician and biologist Ronald Fisher)
+					is one of the most famous starter dataset for Machine Learning and Data Analysis use cases.
+				</p>
+
+				<figure>
+					<a title="No machine-readable author provided. Dlanglois assumed (based on copyright claims)., CC BY-SA 3.0 &lt;http://creativecommons.org/licenses/by-sa/3.0/&gt;,
+					via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Iris_versicolor_3.jpg"><img width="256" alt="Iris versicolor 3"
+					src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Iris_versicolor_3.jpg/512px-Iris_versicolor_3.jpg"></a>
+					<figcaption><i>Iris Versicolor</i></figcaption>
+				</figure>
+
+				<p>
+					It is widely used as a beginner project as it is not a very complex dataset, containing only 150 observations of 4 features.<br/>
+					These observations of Iris flowers are splitted into 3 classes, corresponding to 3 species of Iris flowers : 
+					<b>Setosa,</b> <b>Versicolor</b> and <b>Virginica</b>.<br/><br/>
+					
+					A first simple analysis we can perform on this dataset is to have a look at the number of samples collected for every species of
+					Iris flowers. This can be done in numerous ways, the chosen one here is to represent the proportion of samples within every class
+					with a donut, each part representing a dedicated species (Setosa, Versicolor or Virginica).
+				</p>
+
+                <div id="container-donutchart">
+					<canvas id="iris_donut"></canvas>
+				</div>
+
+                <p>
+					As we can see here, and as it was expected regarding the composition and construction of the dataset, <b>every species contains exactly
+					the same number of observations</b>, 50 elements to be precise. This is what we call a perfectly balancer dataset, and this is very good
+					information as a starter, because in many cases of real life datasets, this is not the case, and this can lead to various problems,
+					such as generalisation difficulties.<br/><br/>
+
+					Another interesting analysis that can be performed is univariate analysis, along available factors/features (4 in our case, namely
+					flowers sepals length/width and petals length/width). These features, also called characteristics or attributes of the dataset, are
+					numeric, especially with floating point numbers. This is an interesting point, as it permits us to analyze these features with boxplots,
+					a familiar and concise representation.<br/><br/>
+
+					Boxplots contain multiple interesting information and values such as the mean, the median, quartiles, min and max values of the sample.
+					Each of these information can be quickly read from the diagram, and helps performing quick comparisons for subgroups in the data sample.
+					We can see in the following plot a set of these box plots for every species of Iris flowers, and every numeric feature forming the
+					characteristics of the sample.
+				</p>
+
+				<div id="container-boxplot">
+					<canvas id="iris_features_boxplot"></canvas>
+				</div>
+
+                <p>
+					The boxplot shows a clear difference between Setosa species and the other two species. <b>Setosa flowers clearly have shorter and thinner
+					petals</b> than Versicolor and Virginica species, making them easily distinguishable. Another evidence that can arise from these boxplots
+					is that <b>Virginica species tend to have higher values than Versicolor flowers</b> in every feature, also permitting an easier distinction
+					between these two species.<br/><br/>
+
+					An other interesting representation of these information is available in the form of a scatterplot. Scatterplots are usually used to represent
+					the relationship between two numeric features, drawing each dimension on a separate axis. This usually helps to quickly deduce whether a
+					linear or a polynomial relationship or correlation occurs between these two variables.<br/><br/>
+
+					The following scatterplot exactly shows the same information and remarks about Setosa being a highly distinguishable species compared to
+					the other two, as well as Virginica flowers having globally higher features values than Versicolor species. The scatterplot also showcases
+					<b>the relationship between the flowers petals length and petals width</b>, that seems to be linear (a line could be drawn, passing through
+					these sets of points).
+				</p>
+
+                <div class="container-scatterplot">
+					<canvas id="iris_petals_scatterplot"></canvas>
+				</div>
+                
+                <p>
+					We could also interpret and deduce many things from this scatterplot, such as classification rules of thumbs. For example, we could divide the
+					range of values for those two features (petals length and petals width), each one into 3 different zones, forming a 3x3 grid. We could definitely
+					deduce high level classification rules for Iris species, based on those two characteristics and the number of observations within every cell.<br/><br/>
+
+					Finally, another global analysis could be performed on these Iris flowers species thanks to a radar. Radar is a powerful comparison tool, usually
+					used to compare profiles and spans of every kind. But it is also a more generic tool when it comes to quickly compare groups of data observations.<br/><br/>
+
+					In the following graph, the means of every feature (petals/sepals length/width) for the three different species have been computed and plotted
+					on a radar. This really helps to compare Iris species in the blink of an eye, based on their mean features values. Of course, mean values should be
+					interpreted with caution, especially when the number of sampled data is low, but it still gives valuable information.
+				</p>
+
+                <div id="container-radarchart">
+					<canvas id="iris_features_radar"></canvas>
+				</div>
+
+                <p>
+					From this radar chart, we can retrieve the same conclusions and remarks we built with the other graphs. We clearly see a <b>smaller profile based on
+					the features mean values for the Iris Setosa species</b> compared to the other two species. We also confirm our deduction on the <b>average higher values
+					on every features for Virginica species compared to Versicolor</b>.<br/><br/>
+
+					The goal of this statistical analysis was to show how quick analysis, deductions and features analysis/comparisons can be performed with the help of
+					descriptive and visual tools such as boxplots or radar charts. This little project could be improved and enriched later on, based on the curiosity around
+					this Iris flowers data set and the statistical potential it can offer.<br/><br/>
+
+					Quentin VINCENOT
+				</p>
+
+				
+
+
+				<!--<p>A virtual dataset of people measurements has been created and will be used throughout the rest of the page as our working tool.<br/>
+				You can have an overview of the datapoints in the scatterplot below, describing the two populations (women and men).<br/></p>
+
+				<div class="container-scatterplot">
+					<canvas id="women-men-scatterplot"></canvas>
+				</div>
+
+				<p>These datapoints represent the distribution of people heights and weights, the points colour being different depending on the people gender.<br/>
+				Features values (height and weight) have been voluntarily generated so as to illustrate a linear relationship, that we will try to model.</p>
+
+				<div class="container-scatterplot">
+					<canvas id="women-men-scatterplot-guess"></canvas>
+				</div>
+
+
+
+				<div id="container-linechart">
+					<canvas id="lineChart"></canvas>
+				</div>
+
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+				Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+				<div id="container-barchart">
+					<canvas id="barChart"></canvas>
+				</div>
+	
+
+				
+	
+				Hello !<br/>
+	
+				-->
+
+			</div>
+
+		</div>
+        <div class="footer">
+			<!-- Footer -->
+        </div>
+		<script type="text/javascript" src="exploratory_analysis.js"></script>
+	</body>
+</html>
