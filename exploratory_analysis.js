@@ -370,20 +370,20 @@ var iris_features_radar = new Chart(document.getElementById('iris_features_radar
     data: {
         labels: ['Sepal length', 'Sepal width', 'Petal length', 'Petal width'],
         datasets: [{
-            label: 'Setosa',
-            data: setosa_radar_dataset,
-            fill: true, pointRadius: 4, pointHoverRadius: 5,
-            backgroundColor: 'rgba(0, 190, 0, 0.4)', pointHoverBackgroundColor: 'rgba(0, 190, 0, 0.8)'
+            label: 'Setosa', data: setosa_radar_dataset,
+            fill: true, borderWidth: 1, pointRadius: 4, pointHoverRadius: 5,
+            backgroundColor: 'rgba(0, 190, 0, 0.5)', borderColor: 'rgba(0, 190, 0, 0.5)',
+            pointBorderColor: 'rgba(255, 255, 255, 0.7)', pointHoverBackgroundColor: 'rgba(0, 190, 0, 0.7)'
         }, {
-            label: 'Versicolor',
-            data: versicolor_radar_dataset,
-            fill: true, pointRadius: 4, pointHoverRadius: 5,
-            backgroundColor: 'rgba(50, 0, 255, 0.4)', pointHoverBackgroundColor: 'rgba(50, 0, 255, 0.8)'
+            label: 'Versicolor', data: versicolor_radar_dataset,
+            fill: true, borderWidth: 1, pointRadius: 4, pointHoverRadius: 5,
+            backgroundColor: 'rgba(50, 0, 255, 0.5)', borderColor: 'rgba(50, 0, 255, 0.5)',
+            pointBorderColor: 'rgba(255, 255, 255, 0.7)', pointHoverBackgroundColor: 'rgba(50, 0, 255, 0.7)'
         }, {
-            label: 'Virginica',
-            data: virginica_radar_dataset,
-            fill: true, pointRadius: 4, pointHoverRadius: 5,
-            backgroundColor: 'rgba(235, 80, 80, 0.4)', pointHoverBackgroundColor: 'rgba(235, 80, 80, 0.8)'
+            label: 'Virginica', data: virginica_radar_dataset,
+            fill: true, borderWidth: 1, pointRadius: 4, pointHoverRadius: 5,
+            backgroundColor: 'rgba(235, 80, 80, 0.5)', borderColor: 'rgba(235, 80, 80, 0.5)',
+            pointBorderColor: 'rgba(255, 255, 255, 0.7)', pointHoverBackgroundColor: 'rgba(235, 80, 80, 0.7)'
         }]
     },
     options: {
