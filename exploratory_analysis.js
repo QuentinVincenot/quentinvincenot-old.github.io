@@ -244,6 +244,7 @@ var iris_features_boxplot = new Chart(document.getElementById('iris_features_box
     },
     options: {
         responsive: true, layout: {padding: 10},
+        maintainAspectRatio: false,
         indexAxis: 'y',
         scales: {y: {beginAtZero: true}},
         plugins: {
@@ -301,6 +302,7 @@ var iris_petals_scatterplot = new Chart(document.getElementById('iris_petals_sca
     },
     options: {
         responsive: true, layout: {padding: 10},
+        maintainAspectRatio: false,
         scales: {
             x: { title: {display: true, text:'Petal length'}, min: 0.5, max: 7.0 },
             y: { title: {display: true, text:'Petal width'}, min: 0.0, max: 3.0 }
