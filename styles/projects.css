@@ -45,7 +45,7 @@
 --------------------------------------------------------------------------------*/
 @media screen and (max-width: 1400px) {
     /* The project section should take the whole width on the reduced page */
-    .content { width: 100%; height: 200px; margin: auto; font-size: 25px; }
+    .content { width: 100%; height: 420px; margin: auto; font-size: 25px; }
     /* Reconfigure the generic project area box dimension to keep a lateral margin */
     .project-area { width: 95%; height: 200px; margin: auto; margin-bottom: 15px; float: none; }
 
