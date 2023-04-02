@@ -19,31 +19,23 @@
 
 #project-title { font-size: 40px; }
 
-#container-donutchart {
+#container-bubblechart {
     background-color: rgba(135, 206, 250, 0.7);
-    width: 400px; height: 400px; margin: 15px auto;
-    min-width: 300px; max-width: 400px; min-height: 300px; max-height: 400px;
+    width: 800px; height: 400px; margin: 15px auto;
+    max-width: 800px; min-height: 300px; max-height: 400px;
     border-radius: 10px;
     box-shadow: 4px 4px 2px 1px rgba(25, 25, 112, 0.8);
 }
 
-#container-boxplot {
+#container-verticalbarchart {
     background-color: rgba(135, 206, 250, 0.7);
-    width: 700px; height: 350px; margin: 15px auto;
-    max-width: 700px; min-height: 350px; max-height: 350px;
+    width: 800px; height: 400px; margin: 15px auto;
+    max-width: 800px; min-height: 300px; max-height: 400px;
     border-radius: 10px;
     box-shadow: 4px 4px 2px 1px rgba(25, 25, 112, 0.8);
 }
 
-#container-scatterplot {
-    background-color: rgba(135, 206, 250, 0.7);
-    width: 700px; height: 350px; margin: 15px auto;
-    max-width: 700px; min-height: 350px; max-height: 350px;
-    border-radius: 10px;
-    box-shadow: 4px 4px 2px 1px rgba(25, 25, 112, 0.8);
-}
-
-#container-radarchart {
+#container-piechart {
     background-color: rgba(135, 206, 250, 0.7);
     width: 400px; height: 400px; margin: 15px auto;
     min-width: 300px; max-width: 400px; min-height: 300px; max-height: 400px;
@@ -66,7 +58,7 @@
 
     #project-title { font-size: 35px; }
 
-    #container-donutchart {
+    #container-bubblechart {
         background-color: rgba(135, 206, 250, 0.7);
         width: 95%; height: 325px; margin: 15px auto;
         max-width: 325px; min-height: 300px; max-height: 325px;
@@ -74,28 +66,15 @@
         box-shadow: 4px 4px 2px 1px rgba(25, 25, 112, 0.8);
     }
 
-    #container-boxplot {
+    #container-verticalbarchart {
         background-color: rgba(135, 206, 250, 0.7);
-        width: 95%; height: 350px; margin: 15px auto;
-        max-width: 350px; min-height: 300px; max-height: 350px;
+        width: 95%; height: 325px; margin: 15px auto;
+        max-width: 325px; min-height: 300px; max-height: 325px;
         border-radius: 10px;
         box-shadow: 4px 4px 2px 1px rgba(25, 25, 112, 0.8);
     }
 
-    #container-scatterplot {
-        background-color: rgba(135, 206, 250, 0.7);
-        width: 95%; height: 300px; margin: 15px auto;
-        max-width: 350px; min-height: 300px; max-height: 300px;
-        border-radius: 10px;
-        box-shadow: 4px 4px 2px 1px rgba(25, 25, 112, 0.8);
-    }
-
-    #iris_petals_scatterplot {
-        width: 100%; height: auto;
-        max-width: 600px; min-height: 200px; max-height: 300px;
-    }
-
-    #container-radarchart {
+    #container-piechart {
         background-color: rgba(135, 206, 250, 0.7);
         width: 95%; height: 325px; margin: 15px auto;
         max-width: 325px; min-height: 300px; max-height: 325px;
