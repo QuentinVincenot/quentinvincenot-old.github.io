@@ -11,8 +11,9 @@
 }
 
 #content-text {
-    width: 1200px; margin: auto; padding-top: 15px; padding-bottom: 15px;
-    text-align: center;font-family: Calibri, sans-serif; font-size: 20px;
+    width: 1170px; margin: auto; padding-top: 15px; padding-bottom: 15px;
+    padding-left: 15px; padding-right: 15px;
+    text-align: center; font-family: Calibri, sans-serif; font-size: 20px;
     background-color: rgba(173, 216, 230, 0.8); border-radius: 30px;
 }
 
